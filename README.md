@@ -1,2 +1,2 @@
-   # AWS Docker CI/CD Pipeline
-   Work in progress.
+ # Deployment of a Flask App with an Automated CI/CD Pipeline on AWS
+Work in progress. 
