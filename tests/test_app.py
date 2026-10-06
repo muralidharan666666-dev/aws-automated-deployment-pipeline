@@ -14,6 +14,7 @@ def test_home_returns_200(client):
     response = client.get("/")
     assert response.status_code == 200
     assert "message" in response.get_json()
+    assert "version" in response.get_json()
 
 
 def test_health_returns_healthy(client):
