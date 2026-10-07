@@ -17,3 +17,13 @@ output "vpc_id" {
   description = "ID of the project VPC"
   value       = aws_vpc.main.id
 }
+
+output "log_group_name" {
+  description = "CloudWatch log group for the container logs"
+  value       = aws_cloudwatch_log_group.app.name
+}
+
+output "sns_topic_arn" {
+  description = "SNS topic that sends alarm emails"
+  value       = aws_sns_topic.alerts.arn
+}
