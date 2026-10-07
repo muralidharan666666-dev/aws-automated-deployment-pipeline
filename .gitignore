@@ -6,3 +6,5 @@ __pycache__/
 *.tfstate
 *.tfstate.*
 .pytest_cache/
+
+tfplan
