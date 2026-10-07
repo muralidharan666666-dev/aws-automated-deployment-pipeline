@@ -15,6 +15,7 @@ env:
   ECR_REGISTRY: 561067234915.dkr.ecr.ap-south-1.amazonaws.com
   ECR_REPOSITORY: flask-app
   SERVER_NAME: flask-app-server
+  LOG_GROUP: /flask-app/app
 
 jobs:
   lint-test:
@@ -119,7 +120,7 @@ jobs:
             "aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin ${ECR_REGISTRY}",
             "docker pull ${IMAGE}",
             "docker rm -f flask-app || true",
-            "docker run -d --name flask-app --restart unless-stopped -p 80:5000 -e APP_VERSION=${GITHUB_SHA} ${IMAGE}",
+            "docker run -d --name flask-app --restart unless-stopped -p 80:5000 --log-driver awslogs --log-opt awslogs-region=${AWS_REGION} --log-opt awslogs-group=${LOG_GROUP} --log-opt awslogs-stream=${GITHUB_SHA} -e APP_VERSION=${GITHUB_SHA} ${IMAGE}",
             "docker image prune -af"
           ]}
           EOF

@@ -33,3 +33,20 @@ variable "public_subnet_cidr" {
   type        = string
   default     = "10.0.1.0/24"
 }
+
+variable "alert_email" {
+  description = "Email address that receives CloudWatch alarm notifications"
+  type        = string
+}
+
+variable "cpu_alarm_threshold" {
+  description = "CPU percentage that triggers the high-CPU alarm"
+  type        = number
+  default     = 70
+}
+
+variable "log_retention_days" {
+  description = "How many days CloudWatch keeps the container logs"
+  type        = number
+  default     = 7
+}
