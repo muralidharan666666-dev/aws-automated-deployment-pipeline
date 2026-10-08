@@ -5,6 +5,12 @@ on:
     branches: [develop, main]
   push:
     branches: [main]
+    # Docs-only changes don't need a new image or a deploy
+    paths-ignore:
+      - "README.md"
+      - "docs/**"
+      - "screenshots/**"
+      - "architecture.png"
 
 permissions:
   contents: read
