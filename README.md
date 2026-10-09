@@ -1,10 +1,5 @@
 # Deployment of a Flask App with an Automated CI/CD Pipeline on AWS
 
-[![CI/CD Pipeline](https://github.com/muralidharan666666-dev/aws-automated-deployment-pipeline/actions/workflows/pipeline.yml/badge.svg?branch=main)](https://github.com/muralidharan666666-dev/aws-automated-deployment-pipeline/actions/workflows/pipeline.yml)
-![Terraform](https://img.shields.io/badge/Terraform-1.15-7B42BC?logo=terraform&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-multi--stage-2496ED?logo=docker&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS-ap--south--1-FF9900)
-
 Every merge to `main` is checked, tested, built into a Docker image, scanned for security issues, stored in Amazon ECR and deployed to EC2. Then the pipeline checks that the live app is healthy and running that exact commit. No AWS keys are stored in GitHub, there's no SSH, and the infrastructure is Terraform.
 
 | **1m 52s** | **0** | **19** | **~3 min** |
